@@ -1,8 +1,4 @@
 package com.tapan.entity;
-<<<<<<< HEAD
-
-=======
->>>>>>> 782294ee766d76d84d0e97f0c908b3400dca68a8
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
