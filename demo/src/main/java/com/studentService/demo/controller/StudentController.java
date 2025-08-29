@@ -3,6 +3,7 @@ package com.studentService.demo.controller;
 
 import com.studentService.demo.entity.Student;
 import com.studentService.demo.service.StudentService;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +44,7 @@ public class StudentController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Student> updateStudent(@PathVariable String id, @RequestBody Student updatedStudent) {
+    public ResponseEntity<Student> updateStudent(@RequestParam("id") String id, @RequestBody Student updatedStudent) {
         Student existingStudent = service.updateStudent(id, updatedStudent);
         if (existingStudent == null) {
             return ResponseEntity.notFound().build();
@@ -53,8 +54,7 @@ public class StudentController {
 
 
     @DeleteMapping("/{id}")
-    public void deleteStudent(@PathVariable String id) {
+    public void deleteStudent(@RequestParam String id) {
           service.deleteStudent(id);
-
     }
 }
