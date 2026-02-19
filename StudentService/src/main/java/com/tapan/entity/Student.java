@@ -23,6 +23,11 @@ public class Student {
     private  Integer rollNo;
 
 
+    private String mobile_no;
+    private String email;
+    private String age;
+
+
 
 
 }
