@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/All/Students")
 public class StudentController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class StudentController {
     private static Logger logger= LoggerFactory.getLogger(StudentController.class);
 
 
-    @PostMapping("/")
+    @PostMapping("/createStudent")
     public ResponseEntity<StudentDto> createStudent(@Valid @RequestBody StudentDto student) throws JsonProcessingException {
 
         ResponseEntity<StudentDto> response=new ResponseEntity<>(service.registerStudent(student), HttpStatus.CREATED) ;
