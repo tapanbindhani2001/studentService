@@ -54,7 +54,7 @@ public class StudentController {
         return response;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/find/{id}")
     public ResponseEntity<StudentDto> getStudent(@PathVariable Integer id) throws JsonProcessingException {
         ResponseEntity<StudentDto> response=new ResponseEntity<>(service.getStudent(id), HttpStatus.FOUND) ;
         kafkaService.notifyService("Get Student API Called");
